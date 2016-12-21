@@ -175,8 +175,10 @@ class Model:
 					 plt.figure()
 					 plt.subplot(121)
 					 plt.hist(_full2.ravel(), 30, range=(-1, 1))
+					 plt.title('Without BN')
  					 plt.subplot(122)
   					 plt.hist(_full2_BN.ravel(), 30, range=(-1, 1))
+  					 plt.title('With BN')
 					 plt.savefig('./plots/histograms/Epoch_{}'.format(epoch))
 					 plt.cla()
 					 plt.clf()
@@ -190,8 +192,9 @@ class Model:
 			plt.title('Accuracy comparison with and without batchnorm')
 			plt.xlabel('Epochs')
 			plt.ylabel('Accuracy')
+			plt.legend(loc=4)
 			plt.savefig('accuracy_comparison')
-
+			
 
 # Run the model
 _model = Model()
